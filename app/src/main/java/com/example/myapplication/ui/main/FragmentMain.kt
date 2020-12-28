@@ -30,10 +30,9 @@ class FragmentMain : Fragment() {
         val button: Button = viewFragment.findViewById(R.id.button)
 
         button.setOnClickListener {
-            val intent = Intent(requireActivity(), FragmentMain::class.java)
-
+            val intent = Intent(activity, ActivityMain::class.java)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                requireActivity(), imageView, ViewCompat.getTransitionName(imageView)!!
+                activity!!, imageView, ViewCompat.getTransitionName(imageView)!!
             )
             startActivity(intent, options.toBundle())
         }
